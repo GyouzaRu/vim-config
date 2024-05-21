@@ -6,7 +6,7 @@ Plugin list please refers to `plugins.vimrc`
 # Usage
 1. Make this config as vim default config.
 ```bash
-ln -s $(PWD)/vim-config ~/.vim
+ln -sfn $(pwd)/vim-config ~/.vim
 ```
 2. Enter folder and download [junegunn/vim-plug](https://github.com/junegunn/vim-plug).
 ```bash
