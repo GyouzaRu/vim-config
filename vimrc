@@ -112,6 +112,9 @@ nnoremap ]t :tabnext<CR>
 "" cancel search highlight
 map <leader><CR> :nohlsearch<CR>
 
+"" terminal
+tnoremap <ESC><ESC> <C-\><C-n>
+
 "" copy and paste with system
 vnoremap <C-C> "+y
 
