@@ -12,7 +12,7 @@ syntax on           "高亮语法
 set noshowmode        "显示当前输入模式
 set showcmd         "命令行显示输入命令
 " set autochdir       "执行命令在当前目录
-set term=screen-256color        "设施256色
+" set term=screen-256color        "设施256色
 set tabstop=4       "Tab显示为4个空格(仍是tab符号)
 set shiftwidth=4    "Tab替换的空格数量为4个
 set expandtab       "Tab自动替换成空格
@@ -43,9 +43,10 @@ set updatetime=200
 set clipboard=unnamedplus
 
 "" change path of vim setting files
-set viminfo+=n~/.vim/.viminfo
-set runtimepath+=~/.vim
-set packpath+=~/.vim
+let s:vimrc_dir = fnamemodify(expand('<sfile>'), ':h')
+let &viminfo .= ',n'.expand(s:vimrc_dir).'/.viminfo'
+let &runtimepath .= ','.expand(s:vimrc_dir)
+let &packpath .= ','.expand(s:vimrc_dir)
 
 "" cursor shape
 let &t_SI = "\e[6 q"
@@ -168,7 +169,7 @@ end
 ""===========================
 "" Plugin setting
 ""===========================
-source ~/.vim/plugins.vimrc
+execute 'source ' . s:vimrc_dir . '/plugins.vimrc'
 
 ""==Nerdtree==
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -266,7 +267,7 @@ let g:gutentags_auto_add_gtags_cscope = 0
 ""===========================
 "" Autocmds
 ""===========================
-source ~/.vim/autocmds.vimrc
+execute 'source ' . s:vimrc_dir . '/autocmds.vimrc'
 
 
 ""===========================
