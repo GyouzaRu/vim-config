@@ -38,7 +38,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-signify'
 
 " ALE
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
 " navi between vim and tmux
 Plug 'christoomey/vim-tmux-navigator'

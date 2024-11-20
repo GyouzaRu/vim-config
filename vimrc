@@ -41,6 +41,7 @@ set timeout timeoutlen=1000     "按下后等待1000ms
 set ttimeout ttimeoutlen=100     "keycode 按下后等待100ms
 set updatetime=200
 set clipboard=unnamedplus
+set completeopt=menuone,noselect
 
 "" change path of vim setting files
 let g:vimrc_dir = fnamemodify(expand('<sfile>'), ':h')
@@ -91,6 +92,10 @@ inoremap <C-l> <ESC><C-w>l
 inoremap <C-h> <ESC><C-w>h
 inoremap <C-j> <ESC><C-w>j
 inoremap <C-k> <ESC><C-w>k
+
+"" complete select
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
 
 "" control window size
 map <up> :res +5<CR>
@@ -233,6 +238,18 @@ else
     "" add all sub folder into list
     set path+=**
 end
+
+""==ALE==
+set omnifunc=ale#completion#OmniFunc
+nmap <silent> [d <Plug>(ale_previous_wrap)
+nmap <silent> ]d <Plug>(ale_next_wrap)
+nmap <buffer> gd <plug>(ale_go_to_definition)
+nmap <buffer> gr <plug>(ale_find_references)
+nmap <buffer> gi <plug>(ale_go_to_implementation)
+nmap <buffer> gp <plug>(ale_hover)
+let g:ale_completion_enabled = 1
+let g:ale_cpp_cc_options = "-std=c++17 -Wall"
+let g:ale_cpp_clangd_options = "-std=c++17 -Wall"
 
 ""==Gutentags==
 " gutentags 搜索工程目录的标志，当前文件路径向上递归直到碰到这些文件/目录名
