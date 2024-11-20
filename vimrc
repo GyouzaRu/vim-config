@@ -43,10 +43,10 @@ set updatetime=200
 set clipboard=unnamedplus
 
 "" change path of vim setting files
-let s:vimrc_dir = fnamemodify(expand('<sfile>'), ':h')
-let &viminfo .= ',n'.expand(s:vimrc_dir).'/.viminfo'
-let &runtimepath .= ','.expand(s:vimrc_dir)
-let &packpath .= ','.expand(s:vimrc_dir)
+let g:vimrc_dir = fnamemodify(expand('<sfile>'), ':h')
+let &viminfo .= ',n'.expand(g:vimrc_dir).'/.viminfo'
+let &runtimepath .= ','.expand(g:vimrc_dir)
+let &packpath .= ','.expand(g:vimrc_dir)
 
 "" cursor shape
 let &t_SI = "\e[6 q"
@@ -169,7 +169,7 @@ end
 ""===========================
 "" Plugin setting
 ""===========================
-execute 'source ' . s:vimrc_dir . '/plugins.vimrc'
+execute 'source ' . g:vimrc_dir . '/plugins.vimrc'
 
 ""==Nerdtree==
 nnoremap <leader>n :NERDTreeToggle<CR>
@@ -267,7 +267,7 @@ let g:gutentags_auto_add_gtags_cscope = 0
 ""===========================
 "" Autocmds
 ""===========================
-execute 'source ' . s:vimrc_dir . '/autocmds.vimrc'
+execute 'source ' . g:vimrc_dir . '/autocmds.vimrc'
 
 
 ""===========================

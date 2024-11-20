@@ -1,7 +1,8 @@
 ""===========================
 "" Plugin setting
 ""===========================
-call plug#begin()
+let plugin_dir = expand(g:vimrc_dir).'/plugged'
+call plug#begin(plugin_dir)
 
 "" NERDTree: file explore
 Plug 'preservim/nerdtree'|
