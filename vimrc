@@ -81,7 +81,7 @@ nnoremap <leader>j J
 
 "" split window
 map <leader>- <C-w>s
-map <leader>= <C-w>v
+map <leader>\ <C-w>v
 map <leader><BS> <C-w>c
 
 "" move cursor to split window
