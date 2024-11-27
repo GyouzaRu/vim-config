@@ -42,6 +42,7 @@ set ttimeout ttimeoutlen=100     "keycode 按下后等待100ms
 set updatetime=200
 set clipboard=unnamedplus
 set completeopt=menuone,noselect
+set shortmess-=S     "搜索显示次数
 
 "" change path of vim setting files
 let g:vimrc_dir = fnamemodify(expand('<sfile>'), ':h')
@@ -297,3 +298,11 @@ try
 catch
     colorscheme ron
 endtry
+
+""===========================
+"" GUI
+""===========================
+if has("gui_running")
+    set guifont=Consolas:h14
+    "set guifontwide=h11
+endif
